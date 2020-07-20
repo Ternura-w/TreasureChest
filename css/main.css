@@ -1,0 +1,177 @@
+/* 修改container的最大宽度为1280 */
+@media screen and (min-width: 1280px) {
+  .container {
+    width: 1280px;
+  }
+} 
+header {
+  padding-left: 0 !important;
+}
+.logo {
+  background-color: #3795DA;
+}
+.logo img {
+  /* 随页面缩放 自适应 */
+  /* width: 100%; */
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+}
+
+/* 1.如果进入了超小屏幕下 logo图片就隐藏起来 */
+
+/* 2.我们事先准备好一个盒子 在logo里面 
+它平时是隐藏起来的 只有在超小屏幕下显示 */
+.logo span {
+  display: block;
+  height: 50px;
+  line-height: 50px;
+  color: #eee;
+  font-size: 18px;
+  text-align: center;
+}
+.logo:hover a{
+  text-decoration: none;
+}
+.nav {
+  background-color: #eee;
+  border-bottom: 1px solid #ccc;
+}
+.nav a {
+  color: #666;
+  display: block;
+  height: 50px;
+  line-height: 50px;
+  padding-left: 20%;
+  font-size: 16px;
+  text-decoration: none;
+}
+.nav a:hover {
+  background-color: #fff;
+  text-decoration: none;
+  color: #333;
+}
+/* 文字居中  */
+.nav a::before {
+  vertical-align: middle;
+  padding-left: 5px;
+}
+/* 中间部分 */
+
+
+/* 当我们进入 小屏幕 还有 超小屏幕的时候 
+我们nav 里面的 li 浮动起来 并且宽度为20%*/
+@media screen and (max-width: 991px) {
+  .nav li {
+    float: left;
+    width: 20%;
+  }
+  article {
+    margin-top: 10px;
+  }
+}
+
+/* 当我们进入 超小屏幕 的时候 
+我们nav 里面的文字会变成14px */
+
+/* 当我们处于超小屏幕 news 第一个li 宽度变为 100%
+剩下的小li 各占50% */
+@media screen and (max-width: 767px) {
+  .nav li a {
+    font-size: 12px;
+  }
+  .news {
+    height: 520px !important;
+  }
+  .news li {
+    width: 50% !important;
+  }
+  .news li:nth-child(1) {
+    width: 100% !important;
+  }
+  .publish h3 {
+    font-size: 12px;
+  }
+  .publish-row {
+    height: 50px !important;
+  }
+}
+.news {
+  height: 270px;
+}
+.news li {
+  float: left;
+  width: 25%;
+  height: 125px;
+  padding:5px 5px 0 0;
+}
+.news li:nth-child(1) {
+  width: 50%;
+  height: 250px;
+}
+
+.news li a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+.news li a img {
+  width: 100%;
+  height: 100%;
+} 
+.news li p {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 0px;
+  line-height: 40px;
+  padding: 0 15px;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #ccc;
+  font-size: 16px;
+  /* 隐藏文字 */
+  overflow: hidden;
+}
+.news li:hover p {
+  height: 40px;
+  transition: height 0.5s;
+}
+.news p:hover {
+  color: #fff;
+}
+.publish {
+  border-top: 1px solid #ccc;
+}
+.publish img {
+  width: 100%;
+  height: 100%;
+  margin-top: 10px;
+}
+.publish-row {
+  height: 200px;
+  border-bottom: 1px solid #ccc;
+  padding: 10px 0;
+}
+.banner img{
+  width: 100%;
+}
+.hot {
+  display: block;
+  margin-top: 20px;
+  padding: 0 20px 20px 20px;
+  border: 1px solid #ccc;
+  text-decoration: none;
+}
+.hot:hover {
+  text-decoration: none;
+}
+.hot span {
+  margin-bottom: 20px;
+  border-radius: 0;
+  height: 30px;
+}
+.hot p:hover {
+  color: rgb(89, 119, 175);
+}
